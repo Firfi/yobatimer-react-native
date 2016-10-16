@@ -26,7 +26,28 @@ const INITIAL_COUNTDOWN_STEP = 'INITIAL_COUNTDOWN_STEP';
 const ROUND_COUNTDOWN_STEP = 'ROUND_COUNTDOWN_STEP';
 const BREAK_COUNTDOWN_STEP = 'BREAK_COUNTDOWN_STEP';
 
-const Timer = settingsWrapper(class T extends Component { // timer will be created only
+const orientationWrapper = (C) => {
+    return class OrientationWrapper extends C {
+        constructor(props) {
+            super(props);
+            this.state = {...this.state, ...this.calculateWH()};
+        }
+        calculateWH = () => {
+            const { width, height } = Dimensions.get('window'); // keep it here until gh issue is resolved or declined
+            const vw = width / 100;
+            const vh = height / 100;
+            return {vw, vh};
+        };
+        render() {
+            const s = super.render();
+            return <View onLayout ={() => {
+                this.setState(this.calculateWH());
+            }} style={s.props.style}>{s}</View>;
+        }
+    }
+};
+
+const Timer = settingsWrapper(orientationWrapper(class T extends Component { // timer will be created only
 
     _countdown(...args) {
         const [fn, lastFn, timeout, n] = args;
@@ -54,24 +75,19 @@ const Timer = settingsWrapper(class T extends Component { // timer will be creat
         this.setState({...this.initialState(this.props)});
     }
 
-    _orientationDidChange = () => {
-        console.warn('orientation did change');
-        this.forceUpdate();
-    };
+    _orientationDidChange() {
+        this.forceUpdate(); // doesn't work
+    }
 
     _watchOrientation() {
-        // Orientation.addOrientationListener(this._orientationDidChange);
-        Orientation.addOrientationListener(() => console.warn('test'));
+        Orientation.addOrientationListener(this._orientationDidChange);
     }
 
     _clearWatchOrientation() {
         Orientation.removeOrientationListener(this._orientationDidChange)
     }
 
-    componentDidMount() {
-        console.warn('cdm', Orientation)
-        Orientation.getOrientation((e, o) => console.warn(e, o));
-        Orientation.addOrientationListener(() => console.warn('test'));
+    componentWillMount() {
         this._watchOrientation();
     }
 
@@ -157,13 +173,10 @@ const Timer = settingsWrapper(class T extends Component { // timer will be creat
     }
 
     render() {
-        console.warn('rerender');
-        const {width, height} = Dimensions.get('window');
-        const vw = width / 100;
-        const vh = height / 100;
         const { settings } = this;
         const { rounds, roundTime, breakTime } = settings;
-        const { round, roundTimeLeft, breakTimeLeft, step } = this.state;
+        const { round, roundTimeLeft, breakTimeLeft, step, vw, vh } = this.state;
+
         const roundTextStyle = [styles.text, styles.timerText, {
             fontSize: 6 * vw
         }];
@@ -176,12 +189,12 @@ const Timer = settingsWrapper(class T extends Component { // timer will be creat
         };
 
         const roundTimeTextStyle = [
-            styles.text, styles.timerText,
-            step === ROUND_COUNTDOWN_STEP ? activeStyle : false,
+            roundTextStyle,
+            step === ROUND_COUNTDOWN_STEP ? activeStyle : false
         ];
         const breakTimeTextStyle = [
-            styles.text, styles.timerText,
-            step === BREAK_COUNTDOWN_STEP ? activeStyle : false,
+            roundTextStyle,
+            step === BREAK_COUNTDOWN_STEP ? activeStyle : false
         ];
         return (
             <View>
@@ -218,9 +231,9 @@ const Timer = settingsWrapper(class T extends Component { // timer will be creat
         );
     }
 
-});
+}));
 
-class MainScreen extends Component {
+const MainScreen = orientationWrapper(class MainScreen extends Component {
 
     constructor() {
         super();
@@ -235,6 +248,7 @@ class MainScreen extends Component {
         if (started) {
             this.clear();
         } else {
+
             this.refs.timer.play();
             KeepAwake.activate(); // screen always active, including pause mode
         }
@@ -266,8 +280,10 @@ class MainScreen extends Component {
     }
    
     render() {
-
-        const { started, paused } = this.state;
+        const { started, paused, vw, vh } = this.state;
+        const buttonTextStyle = [styles.text, styles.timerText, {
+            fontSize: 6 * vw
+        }];
         return (
             <View style={[styles.container, {flexDirection: 'row'}]}>
                 <View style={{flex: 0.2}}/>
@@ -282,7 +298,7 @@ class MainScreen extends Component {
                             shadowColor="black"
                             onPress={this.togglePause.bind(this)}
                             style={{flex: 1, flexDirection: 'row', paddingTop: 10, paddingBottom: 10, paddingLeft: 20, paddingRight: 20, justifyContent: 'center'}}
-                        ><Text style={[styles.text, styles.timerText]}>{paused ? 'Resume' : 'Pause'}</Text></MKButton> : false}
+                        ><Text style={buttonTextStyle}>{paused ? 'Resume' : 'Pause'}</Text></MKButton> : false}
                         <MKButton
                             backgroundColor={started ? colors.accent900 : colors.primary500}
                             shadowRadius={2}
@@ -293,7 +309,7 @@ class MainScreen extends Component {
                             style={{flex: 1, flexDirection: 'row', paddingTop: 10, paddingBottom: 10, paddingLeft: 20, paddingRight: 20, justifyContent: 'center'}}
                         >
                             <Text pointerEvents="none"
-                                  style={[styles.text, styles.timerText]}>
+                                  style={buttonTextStyle}>
                                 {started ? 'Stop' : 'Start'}
                             </Text>
                         </MKButton>
@@ -304,6 +320,6 @@ class MainScreen extends Component {
             </View>
         );
     }
-}
+});
 
 export default MainScreen;

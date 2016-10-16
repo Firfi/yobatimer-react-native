@@ -37,7 +37,7 @@ export default (C) => {
     return observer(class SettingsWrapper extends C {
         constructor() {
             super();
-            this.state = {...this.state, settingsLoading: true};
+            this.state = {...this.state, settingsLoading: true}; // TODO sounds wrong but it is the way to make ref.settings.method() work
         }
         componentWillMount() {
             settingsPromise.then(settings => {
