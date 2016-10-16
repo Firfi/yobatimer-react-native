@@ -26,28 +26,7 @@ const INITIAL_COUNTDOWN_STEP = 'INITIAL_COUNTDOWN_STEP';
 const ROUND_COUNTDOWN_STEP = 'ROUND_COUNTDOWN_STEP';
 const BREAK_COUNTDOWN_STEP = 'BREAK_COUNTDOWN_STEP';
 
-const orientationWrapper = (C) => {
-    return class OrientationWrapper extends C {
-        constructor(props) {
-            super(props);
-            this.state = {...this.state, ...this.calculateWH()};
-        }
-        calculateWH = () => {
-            const { width, height } = Dimensions.get('window'); // keep it here until gh issue is resolved or declined
-            const vw = width / 100;
-            const vh = height / 100;
-            return {vw, vh};
-        };
-        render() {
-            const s = super.render();
-            return <View onLayout ={() => {
-                this.setState(this.calculateWH());
-            }} style={s.props.style}>{s}</View>;
-        }
-    }
-};
-
-const Timer = settingsWrapper(orientationWrapper(class T extends Component { // timer will be created only
+const Timer = settingsWrapper(class T extends Component {
 
     _countdown(...args) {
         const [fn, lastFn, timeout, n] = args;
@@ -75,26 +54,7 @@ const Timer = settingsWrapper(orientationWrapper(class T extends Component { // 
         this.setState({...this.initialState(this.props)});
     }
 
-    _orientationDidChange() {
-        this.forceUpdate(); // doesn't work
-    }
-
-    _watchOrientation() {
-        Orientation.addOrientationListener(this._orientationDidChange);
-    }
-
-    _clearWatchOrientation() {
-        Orientation.removeOrientationListener(this._orientationDidChange)
-    }
-
-    componentWillMount() {
-        this._watchOrientation();
-    }
-
-    componentWillUnmount() {
-        this._clearCountdown();
-        this._clearWatchOrientation();
-    }
+   
 
     initialState = (props) => ({
         round: 1,
@@ -173,9 +133,10 @@ const Timer = settingsWrapper(orientationWrapper(class T extends Component { // 
     }
 
     render() {
+        const { vw, vh } = this.context;
         const { settings } = this;
         const { rounds, roundTime, breakTime } = settings;
-        const { round, roundTimeLeft, breakTimeLeft, step, vw, vh } = this.state;
+        const { round, roundTimeLeft, breakTimeLeft, step } = this.state;
 
         const roundTextStyle = [styles.text, styles.timerText, {
             fontSize: 6 * vw
@@ -231,9 +192,14 @@ const Timer = settingsWrapper(orientationWrapper(class T extends Component { // 
         );
     }
 
-}));
+});
 
-const MainScreen = orientationWrapper(class MainScreen extends Component {
+Timer.contextTypes = {
+    vw: React.PropTypes.number,
+    vh: React.PropTypes.number,
+};
+
+const MainScreen = class MainScreen extends Component {
 
     constructor() {
         super();
@@ -280,7 +246,8 @@ const MainScreen = orientationWrapper(class MainScreen extends Component {
     }
    
     render() {
-        const { started, paused, vw, vh } = this.state;
+        const { vw, vh } = this.context;
+        const { started, paused } = this.state;
         const buttonTextStyle = [styles.text, styles.timerText, {
             fontSize: 6 * vw
         }];
@@ -320,6 +287,11 @@ const MainScreen = orientationWrapper(class MainScreen extends Component {
             </View>
         );
     }
-});
+};
+
+MainScreen.contextTypes = {
+    vw: React.PropTypes.number,
+    vh: React.PropTypes.number,
+};
 
 export default MainScreen;
