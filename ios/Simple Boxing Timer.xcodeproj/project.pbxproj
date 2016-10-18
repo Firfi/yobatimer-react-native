@@ -18,7 +18,6 @@
 		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
 		139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
-		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
@@ -30,6 +29,10 @@
 		42A04FC41DB00493007E6D91 /* beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 42A04FC11DB00493007E6D91 /* beep.wav */; };
 		42A04FC51DB00493007E6D91 /* bell1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 42A04FC21DB00493007E6D91 /* bell1.wav */; };
 		42A04FC61DB00493007E6D91 /* bell3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 42A04FC31DB00493007E6D91 /* bell3.wav */; };
+		42A0500E1DB507EA007E6D91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42A0500D1DB507EA007E6D91 /* LaunchScreen.storyboard */; };
+		42A050151DB52512007E6D91 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42A050141DB52512007E6D91 /* Default-568h@2x.png */; };
+		42A0501D1DB52874007E6D91 /* YobaTimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A0501C1DB52874007E6D91 /* YobaTimerUITests.swift */; };
+		42A050271DB5E808007E6D91 /* SnapshotHelper2-3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A050261DB5E808007E6D91 /* SnapshotHelper2-3.swift */; };
 		5BA4944EE9594CE9885100CE /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89B05707B9E241CE980288EB /* Octicons.ttf */; };
 		6482303E3427459A97327EE3 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B2705EFFE8540ACAB1BA3FA /* EvilIcons.ttf */; };
 		6A0926A43A494A70947335AF /* libRCTMaterialKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8488F25F8828432EA015276F /* libRCTMaterialKit.a */; };
@@ -140,6 +143,13 @@
 			remoteGlobalIDString = 134814201AA4EA6300B7C361;
 			remoteInfo = RCTOrientation;
 		};
+		42A0501F1DB52874007E6D91 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
+			remoteInfo = YobaTimer;
+		};
 		78C398B81ACF4ADC00677621 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */;
@@ -174,7 +184,6 @@
 		13B07F961A680F5B00A75B9A /* YobaTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YobaTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = YobaTimer/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = YobaTimer/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = YobaTimer/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = YobaTimer/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = YobaTimer/main.m; sourceTree = "<group>"; };
@@ -183,6 +192,12 @@
 		42A04FC11DB00493007E6D91 /* beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = beep.wav; path = ../beep.wav; sourceTree = "<group>"; };
 		42A04FC21DB00493007E6D91 /* bell1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bell1.wav; path = ../bell1.wav; sourceTree = "<group>"; };
 		42A04FC31DB00493007E6D91 /* bell3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bell3.wav; path = ../bell3.wav; sourceTree = "<group>"; };
+		42A0500D1DB507EA007E6D91 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = YobaTimer/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		42A050141DB52512007E6D91 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		42A0501A1DB52874007E6D91 /* YobaTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YobaTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		42A0501C1DB52874007E6D91 /* YobaTimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YobaTimerUITests.swift; sourceTree = "<group>"; };
+		42A0501E1DB52874007E6D91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42A050261DB5E808007E6D91 /* SnapshotHelper2-3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SnapshotHelper2-3.swift"; sourceTree = "<group>"; };
 		4AE9D1B5B5264BD6AE816038 /* KCKeepAwake.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = KCKeepAwake.xcodeproj; path = "../node_modules/react-native-keep-awake/ios/KCKeepAwake.xcodeproj"; sourceTree = "<group>"; };
 		4DB764ACE6114DA3ACEE35EE /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		532A453EB130420398965D6E /* libRCTOrientation.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTOrientation.a; sourceTree = "<group>"; };
@@ -229,6 +244,13 @@
 				734C6D51539C493CAA7F9369 /* libRNVectorIcons.a in Frameworks */,
 				B7D1AE4529C6403C8A814E8F /* libKCKeepAwake.a in Frameworks */,
 				8340F249940649A9ACD09028 /* libRCTOrientation.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42A050171DB52873007E6D91 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,12 +333,12 @@
 		13B07FAE1A68108700A75B9A /* YobaTimer */ = {
 			isa = PBXGroup;
 			children = (
+				42A0500D1DB507EA007E6D91 /* LaunchScreen.storyboard */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
-				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
 			name = YobaTimer;
@@ -368,6 +390,16 @@
 				42A04FFF1DB25E71007E6D91 /* libRCTOrientation.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		42A0501B1DB52874007E6D91 /* YobaTimerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				42A050261DB5E808007E6D91 /* SnapshotHelper2-3.swift */,
+				42A0501C1DB52874007E6D91 /* YobaTimerUITests.swift */,
+				42A0501E1DB52874007E6D91 /* Info.plist */,
+			);
+			path = YobaTimerUITests;
 			sourceTree = "<group>";
 		};
 		78C398B11ACF4ADC00677621 /* Products */ = {
@@ -429,9 +461,11 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				42A050141DB52512007E6D91 /* Default-568h@2x.png */,
 				13B07FAE1A68108700A75B9A /* YobaTimer */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* YobaTimerTests */,
+				42A0501B1DB52874007E6D91 /* YobaTimerUITests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				7C4CFB48D52B462AB8BD52D6 /* Resources */,
 			);
@@ -444,6 +478,7 @@
 			children = (
 				13B07F961A680F5B00A75B9A /* YobaTimer.app */,
 				00E356EE1AD99517003FC87E /* YobaTimerTests.xctest */,
+				42A0501A1DB52874007E6D91 /* YobaTimerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -487,14 +522,33 @@
 			productReference = 13B07F961A680F5B00A75B9A /* YobaTimer.app */;
 			productType = "com.apple.product-type.application";
 		};
+		42A050191DB52873007E6D91 /* YobaTimerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42A050211DB52874007E6D91 /* Build configuration list for PBXNativeTarget "YobaTimerUITests" */;
+			buildPhases = (
+				42A050161DB52873007E6D91 /* Sources */,
+				42A050171DB52873007E6D91 /* Frameworks */,
+				42A050181DB52873007E6D91 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42A050201DB52874007E6D91 /* PBXTargetDependency */,
+			);
+			name = YobaTimerUITests;
+			productName = YobaTimerUITests;
+			productReference = 42A0501A1DB52874007E6D91 /* YobaTimerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 610;
-				ORGANIZATIONNAME = Facebook;
+				ORGANIZATIONNAME = Firfi;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
@@ -503,9 +557,13 @@
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = 8YGCP5T969;
 					};
+					42A050191DB52873007E6D91 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 13B07F861A680F5B00A75B9A;
+					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "YobaTimer" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Simple Boxing Timer" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -582,6 +640,7 @@
 			targets = (
 				13B07F861A680F5B00A75B9A /* YobaTimer */,
 				00E356ED1AD99517003FC87E /* YobaTimerTests */,
+				42A050191DB52873007E6D91 /* YobaTimerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -707,18 +766,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				1730E8BA42E64AFD90D6F278 /* Entypo.ttf in Resources */,
 				6482303E3427459A97327EE3 /* EvilIcons.ttf in Resources */,
 				1C26671C486B4208B64FEB6D /* FontAwesome.ttf in Resources */,
 				3A342AF13B944EA1834A522E /* Foundation.ttf in Resources */,
+				42A050151DB52512007E6D91 /* Default-568h@2x.png in Resources */,
 				EDB896C4AC4F4E48938A5299 /* Ionicons.ttf in Resources */,
 				0C206ECC0F8344FF8EB50254 /* MaterialIcons.ttf in Resources */,
 				5BA4944EE9594CE9885100CE /* Octicons.ttf in Resources */,
 				42A04FC51DB00493007E6D91 /* bell1.wav in Resources */,
 				CC72A0F27B34425A84617935 /* Zocial.ttf in Resources */,
+				42A0500E1DB507EA007E6D91 /* LaunchScreen.storyboard in Resources */,
 				42A04FC41DB00493007E6D91 /* beep.wav in Resources */,
 				42A04FC61DB00493007E6D91 /* bell3.wav in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42A050181DB52873007E6D91 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -759,6 +826,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		42A050161DB52873007E6D91 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42A050271DB5E808007E6D91 /* SnapshotHelper2-3.swift in Sources */,
+				42A0501D1DB52874007E6D91 /* YobaTimerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -767,19 +843,12 @@
 			target = 13B07F861A680F5B00A75B9A /* YobaTimer */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		13B07FB11A68108700A75B9A /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				13B07FB21A68108700A75B9A /* Base */,
-			);
-			name = LaunchScreen.xib;
-			path = YobaTimer;
-			sourceTree = "<group>";
+		42A050201DB52874007E6D91 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 13B07F861A680F5B00A75B9A /* YobaTimer */;
+			targetProxy = 42A0501F1DB52874007E6D91 /* PBXContainerItemProxy */;
 		};
-/* End PBXVariantGroup section */
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
@@ -852,6 +921,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.firfi.YobaTimer;
 				PRODUCT_NAME = YobaTimer;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -882,9 +952,43 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.firfi.YobaTimer;
 				PRODUCT_NAME = YobaTimer;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		42A050221DB52874007E6D91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = YobaTimerUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.firfi.YobaTimerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TEST_TARGET_NAME = YobaTimer;
+			};
+			name = Debug;
+		};
+		42A050231DB52874007E6D91 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = YobaTimerUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.firfi.YobaTimerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = YobaTimer;
 			};
 			name = Release;
 		};
@@ -1005,7 +1109,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "YobaTimer" */ = {
+		42A050211DB52874007E6D91 /* Build configuration list for PBXNativeTarget "YobaTimerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42A050221DB52874007E6D91 /* Debug */,
+				42A050231DB52874007E6D91 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Simple Boxing Timer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
