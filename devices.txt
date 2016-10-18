@@ -1,0 +1,3 @@
+Device ID	Device Name
+9329630f698f549c8c9101c1660d46dfa9afe0e2	Firfi iPhone4
+3c727c6e4628ca1722f7a367b4e8f165bb7f6778	Firfi iPad2
