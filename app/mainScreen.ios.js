@@ -259,6 +259,7 @@ const MainScreen = class MainScreen extends Component {
                     <View style={{flexDirection: 'row', justifyContent: 'space-between', marginTop: 20}}>
                         {started ? <MKButton
                             testID="pause-resume-button"
+                            accessibilityTraits={['button']}
                             backgroundColor={colors.theme3}
                             shadowRadius={2}
                             shadowOffset={{width:0, height:2}}
@@ -269,6 +270,7 @@ const MainScreen = class MainScreen extends Component {
                         ><Text style={buttonTextStyle}>{paused ? 'Resume' : 'Pause'}</Text></MKButton> : false}
                         <MKButton
                             testID="start-stop-button"
+                            accessibilityTraits={['button']}
                             backgroundColor={started ? colors.accent900 : colors.primary500}
                             shadowRadius={2}
                             shadowOffset={{width:0, height:2}}

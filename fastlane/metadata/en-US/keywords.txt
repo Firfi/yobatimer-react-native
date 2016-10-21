@@ -1,0 +1,6 @@
+boxing
+timer
+sport
+training
+interval
+round

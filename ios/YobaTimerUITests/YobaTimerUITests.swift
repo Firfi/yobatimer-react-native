@@ -31,11 +31,22 @@ class YobaTimerUITests: XCTestCase {
     }
     
     func testExample() {
-      let app = XCUIApplication();
-      snapshot("0Launch")
-      let startStopButton = app.buttons["start-stop-button"]
-      startStopButton.tap()
-      snapshot("1Timer")
+      
+      let app = XCUIApplication()
+      snapshot("0Timer")
+      let startButton = app.buttons[" Start  "]
+      startButton.tap()
+      let stopButton = app.buttons[" Stop  "]
+      stopButton.tap()
+      app.tabBars.buttons["Settings"].tap()
+      snapshot("1Settings")
+      
+            
+//      let app = XCUIApplication();
+//      snapshot("0Launch")
+//      let startStopButton = app.otherElements["start-stop-button"]
+//      startStopButton.tap()
+//      snapshot("1Timer")
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }

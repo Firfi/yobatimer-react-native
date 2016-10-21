@@ -1,0 +1,3 @@
+Simple Boxing Timer is a helpful training application that allows you organize your workouts.
+You can change your round/rest time and rounds count in the settings.
+It's fast, simple and small, and it works even on legacy devices like iPhone 4.

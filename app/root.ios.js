@@ -63,6 +63,8 @@ export default class YobaTimer extends Component {
                     </Icon.TabBarItemIOS>
 
                     <Icon.TabBarItemIOS
+                        testID="settings"
+                        accessibilityTraits={['button']}
                         title="Settings"
                         iconName="ios-settings"
                         selectedIconName="ios-settings"

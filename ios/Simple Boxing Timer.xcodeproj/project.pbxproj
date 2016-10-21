@@ -1116,6 +1116,7 @@
 				42A050231DB52874007E6D91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Simple Boxing Timer" */ = {
 			isa = XCConfigurationList;
